@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(208, 238, 232);
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.contact-form {
+    --form-ok-color: #4caf50;
+    --form-error-color: #FA782E;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.contact-form>* {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+}
+
+.contact-form legend,
+.contact-form-response {
+    width: 22%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.contact-form input[type="submit"] {
+   
+    
+    width: 50%;
+    //background-color: #FA782E;
+    background-color: var(--form-ok-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form *::placeholder {
+    color: black;
+}
+
+.contact-form [required]:valid {
+    border: thick solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+    border: thick solid var(--form-error-color);
+}
+
+.contact-form-error {
+    margin-top: -1rem;
+    font-size: 80%;
+    background-color: var(--form-error-color);
+    color: #fff;
+    transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.contact-form-loader {
+    display: flex;
+    justify-content: center;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes show-message {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.tito {
+    background-color: #f44336;
+}
+
+.contactoContainer {
+    width: 80%;
+    background-color: grey;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .container{
+        gap: 40px;
+        margin: auto;
+    }
+}
+
+.contactoContainer .btnModal {
+    width: 35px;
+    position: static;
+    left: 20px;
+    border-radius: 50%;
+    background-color: #242424;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+    box-shadow: 4px 4px 0px (rgb(24, 24, 24));
+    transition: all 0.5s ease;
+
+    &:hover {
+        transform: rotate(0deg) translate(4px, 4px) scale(1);
+        box-shadow: 0px 0px 0px
+    }
+}
+
+.image-contact {
+    opacity: 10%;
+}
+.datos-contacto{
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.datos-soplante{
+   
+    align-items: center;
+    :nth-child(n) {
+        width: 100%;
+        margin-top: 10px;
+      }
+}

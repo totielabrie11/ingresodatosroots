@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Planilla Datos Soplantes</title>
+</head>
+<body>
+    <div class="d-flex">
+        <div class="logo w-25">
+            <img src="./img/logo.jpg" alt="" width="100%">
+        </div>
+        <h1>Datos de sopladores lado CLIENTE</h1>
+    </div>
+    <div class="container-fluid">
+            <form target="_blank" action="https://formsubmit.co/martinezcarlosmanuel.1@gmail.com" method="POST" class="contact-form row">
+                <div class="d-flex datos-contacto">
+                    <legend>Datos del cliente</legend>
+                    <input type="text" name="nombre" placeholder="Escribe tu nombre" title="Nombre solo acepta letras y espacios en blanco"     required>
+                    <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto, debe incluír al menos @ y .com" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                    <input type="text" name="asunto" placeholder="Asunto a tratar" title="El asunto es requerido" required>
+                    <input type="text" name="localidad" placeholder="Provincia o Localidad" title="La provincia o localidad es requerida" required>
+                </div>
+                <div class="flex-row datos-soplante w-25">
+                    <legend>Datos del Soplador</legend>
+                    <select class="text-center" name="" id="" title="El destino al que llegará la consulta es requerido" required>
+                        <option value="">---Eliga Tipo de Soplante---</option>
+                        <option value="DS">Soplador para presion</option>
+                        <option value="DSV">Soplador para vacío</option>
+                    </select>
+                    <input class="" type="number" name="caudal" placeholder="Caudal M3" title="Nombre solo acepta letras y espacios en blanco"  min="30" max="2800" required>
+                    <input class="" type="number" name="presión" placeholder="Presion del sistema mmBar" title="Email incorrecto, debe incluír al menos @ y .com" min="100" max="800" required>
+                    <select class="text-center" name="motor provisto por" id="" title="El destino al que llegará la consulta es requerido" required>
+                        <option value="">---Motor provisto por---</option>
+                        <option value="dosivac">Dosivac</option>
+                        <option value="cliente">El cliente</option>
+                        <option value="libre">Eje libre</option>
+                    </select>
+                    <select class="text-center d-none" name="potencia de motor" id="motoresSelector" title="El destino al que llegará la consulta es requerido" required>
+                        <option value="">---Eliga Potencia Motor HP---</option>
+                        <option value="1.5">1.5HP</option>
+                        <option value="2">2HP</option>
+                        <option value="4">4HP</option>
+                    </select>
+                    
+                </div>
+               <!--  <select class="text-center" name="" id="" title="El destino al que llegará la consulta es requerido" required>
+                    <option value="">---Eliga Destinatario---</option>
+                    <option value="reparaciones">REPARACIONES</option>
+                    <option value="cotizaciones">COTIZACIONES</option>
+                    <option value="dosificacion">REFRIGERACION - DOSIFICACION</option>
+                    <option value="sopladores">SOPLADORES Y CENTRALES DE VACIO</option>
+                </select> -->
+                <!-- <textarea name="comentarios" cols="50" rows="5" placeholder="Escribe tus comentarios" title="Tu comentario no debe exceder los 255 carcateres" data-pattern="^.{1,255}$" required></textarea> -->
+                <div class="resultado-contenedor w-75">
+
+                </div>
+                <input type="submit" class="" value="Enviar">
+                <div class="contact-form-loader none">
+                    <img src="assets/puff.svg" alt="cargando">
+                </div>
+                <div class="contact-form-response none">
+                    <p>Los datos han sido enviados</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+        <script src="js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
