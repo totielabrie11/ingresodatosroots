@@ -13,9 +13,23 @@ h1{
     margin: auto;
 }
 
+@media only all and (max-width: 990px) {
+    legend {
+        font-size: 15px !important;// hacer algo
+        margin: auto;    
+    }
+ 
+    .datos-soplante {
+        margin: auto !important;
+        min-width: 200px !important;
+        
+     }
+}
+  
+
 .contact-form {
     --form-ok-color: #4caf50;
-    --form-error-color: #FA782E;
+    --form-error-color: #fa2e2e;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -50,11 +64,15 @@ textarea {
 .contact-form input[type="submit"] {
    
     
-    width: 50%;
+    width: 25%;
     //background-color: #FA782E;
-    background-color: var(--form-ok-color);
+    background-color: #fa2e2e;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 20px;
+    &:hover {
+        background-color: var(--form-ok-color) !important;
+    }
 }
 
 .contact-form *::placeholder {
@@ -149,6 +167,9 @@ textarea {
 .datos-contacto{
     flex-wrap: wrap;
     gap: 10px;
+    :nth-child(n){
+        max-height: 34px;
+    }
 }
 .datos-soplante{
    

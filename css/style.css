@@ -15,9 +15,20 @@ h1 {
   margin: auto;
 }
 
+@media only all and (max-width: 990px) {
+  legend {
+    font-size: 15px !important;
+    margin: auto;
+  }
+  .datos-soplante {
+    margin: auto !important;
+    min-width: 200px !important;
+  }
+}
+
 .contact-form {
   --form-ok-color: #4caf50;
-  --form-error-color: #FA782E;
+  --form-error-color: #fa2e2e;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
@@ -49,10 +60,15 @@ textarea {
 }
 
 .contact-form input[type="submit"] {
-  width: 50%;
-  background-color: var(--form-ok-color);
+  width: 25%;
+  background-color: #fa2e2e;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 20px;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: var(--form-ok-color) !important;
 }
 
 .contact-form *::-webkit-input-placeholder {
@@ -183,6 +199,10 @@ textarea {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 10px;
+}
+
+.datos-contacto :nth-child(n) {
+  max-height: 34px;
 }
 
 .datos-soplante {
