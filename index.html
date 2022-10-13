@@ -26,26 +26,31 @@
                 </div>
                 <div class="flex-row datos-soplante w-25">
                     <legend>Datos del Soplador</legend>
-                    <select class="text-center" name="" id="" title="El destino al que llegará la consulta es requerido" required>
+                    
+                    <select class="text-center" name="" id="" title="Se requiere elija tipo de equipo" required>
                         <option value="">---Eliga Tipo de Soplante---</option>
                         <option value="DS">Soplador para presion</option>
                         <option value="DSV">Soplador para vacío</option>
                     </select>
-                    <input class="" type="number" name="caudal" placeholder="Caudal M3" title="Nombre solo acepta letras y espacios en blanco"  min="30" max="2800" required>
-                    <input class="" type="number" name="presión" placeholder="Presion del sistema mmBar" title="Email incorrecto, debe incluír al menos @ y .com" min="100" max="800" required>
-                    <select class="text-center" name="motor provisto por" id="" title="El destino al que llegará la consulta es requerido" required>
+                    <input class="" type="number" name="caudal" placeholder="Caudal M3" title="Se requiere caudal en mts/3"  min="30" max="2800" required>
+                    <input class="" type="number" name="presión" placeholder="Presion del sistema mmBar" title="Se requiere indique presión del sistema" min="100" max="800" required>
+                    <select class="text-center" name="motor provisto por" id="" title="El motor será provisto por.." required>
                         <option value="">---Motor provisto por---</option>
                         <option value="dosivac">Dosivac</option>
                         <option value="cliente">El cliente</option>
                         <option value="libre">Eje libre</option>
                     </select>
-                    <select class="text-center d-none" name="potencia de motor" id="motoresSelector" title="El destino al que llegará la consulta es requerido" required>
-                        <option value="">---Eliga Potencia Motor HP---</option>
-                        <option value="1.5">1.5HP</option>
-                        <option value="2">2HP</option>
-                        <option value="4">4HP</option>
-                    </select>
                     
+                    <select class="text-center d-none" name="potencia de motor" id="eficienciaSelector" title="El destino al que llegará la consulta es requerido" required>
+                        <option value="">---Eliga Eficiencia del Motor---</option>
+                        <option value="IE1">IE 1</option>
+                        <option value="IE3">IE 3</option>
+                    </select>
+                    <div class="d-none" id="condicionTrabajo">
+                        <legend>Condicion de trabajo</legend>
+                        <input type="number" name="altura" placeholder="Indique a que altura" title="Nombre solo acepta letras y espacios en blanco" min="0" max="4000" required>
+                        <input type="number" name="temperatura" placeholder="Indique temperatura ambiente" title="Nombre solo acepta letras y espacios en blanco" min="0" max="50" required>
+                    </div>
                 </div>
                <!--  <select class="text-center" name="" id="" title="El destino al que llegará la consulta es requerido" required>
                     <option value="">---Eliga Destinatario---</option>
@@ -55,8 +60,9 @@
                     <option value="sopladores">SOPLADORES Y CENTRALES DE VACIO</option>
                 </select> -->
                 <!-- <textarea name="comentarios" cols="50" rows="5" placeholder="Escribe tus comentarios" title="Tu comentario no debe exceder los 255 carcateres" data-pattern="^.{1,255}$" required></textarea> -->
-                <div class="resultado-contenedor w-75">
-
+                <div class="resultado-contenedor w-75" id="configurar-equipo">
+                    <legend class="w-100">Vista preliminar</legend>
+                    <div class="alerta"></div>
                 </div>
                 <input type="submit" class="btn" value="Enviar">
                 <div class="contact-form-loader none">

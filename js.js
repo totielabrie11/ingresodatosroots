@@ -6,43 +6,72 @@ doc.addEventListener('DOMContentLoader', (e) =>
 
 )
 
+
+
 contactFormValidations()
 
 function contactFormValidations(){
 
+    const $condicionTrabajo = doc.getElementById('condicionTrabajo');
+    const $alerta = doc.querySelectorAll('.alerta')
+    console.log("🚀 ~ file: js.js ~ line 17 ~ contactFormValidations ~ $alerta", $alerta)
+    
+    
     const $form = doc.querySelector('.contact-form');
     $inputs = doc.querySelectorAll('.contact-form [required]');
     console.log($inputs)
 
+    let $tipoDeEquipo = $inputs[4];
     let $selectProcedenciaMotor = $inputs[7]
-    let $selectPotenciaMotor = $inputs[8]
+    let $eficienciaMotor =  $inputs[8]
+
+    equipo = []
+    procedenciaMotor = []
+
+    $tipoDeEquipo.addEventListener('change', ()=> {
+        
+        equipo.push($tipoDeEquipo.value)
+    });
     
     $selectProcedenciaMotor.addEventListener("change", ()=>{
-        const mailSelector = $selectProcedenciaMotor.value
-        console.log("🚀 ~ file: form.js ~ line 23 ~ $selectProcedenciaMotor.addEventListener ~ mailSelector", mailSelector)
-        
-        if (mailSelector == "dosivac") {
+        procedenciaMotor = $selectProcedenciaMotor.value
+       
+        if(equipo.length === 1){
+            $condicionTrabajo.classList.remove('d-none')
+        }else{
+            $alerta[0].innerHTML = '<span class="alert bg-danger w-100 vh-50">DEBE SELECCIONAR TIPO DE EQUIPO</span>'
+            
+            setTimeout(borrarEvento, 3000);
+        }
+
+        function borrarEvento(){
+            $alerta[0].innerHTML = ''
+        }
+
+        if (procedenciaMotor == "dosivac") {
            /*  $form.setAttribute('action', 'https://formsubmit.co/repuestos@dosivac.com') */
            /* console.log($form.action) */
            console.log('estoy escogiendo equipo con motoro provisto por Dosivac')
-           $selectPotenciaMotor.classList.remove('d-none')
-           
+        
+           $eficienciaMotor.classList.remove('d-none')
+
         }
-        if (mailSelector == "cliente") {
+        if (procedenciaMotor == "cliente") {
            /*  $form.setAttribute('action', 'https://formsubmit.co/cotizaciones@dosivac.com') */
            /* console.log($form.action) */
-            console.log('estoy modificando cotizaciones')
-            $selectPotenciaMotor.classList.remove('d-none')
+
+            $eficienciaMotor.classList.add('d-none')
+           
         }
-        if (mailSelector == "libre") {
+        if (procedenciaMotor == "libre") {
             /* $form.setAttribute('action', 'https://formsubmit.co/cotizaciones@dosivac.com') */
             /* console.log($form.action) */
             console.log('estoy modificando cotizaciones')
-            $selectPotenciaMotor.classList.add('d-none')
+            $eficienciaMotor.classList.add('d-none')
+
         }
         
     })
-    
     
        
 
