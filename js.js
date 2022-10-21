@@ -1,17 +1,58 @@
 const doc = document
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input')
+
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+
+const validadFormulario = (e) =>{
+
+    switch (e.target.name){
+        case 'nombre': 
+            if (expresiones.usuario.test(e.target.value)) {
+                
+            }else{
+                document.getElementById('grupo__usuario').classList.add('formulario__incorrecto');
+            }
+        break;
+        case 'email': 
+            console.log('estoy ingresando a email')
+        break;
+        case 'asunto': 
+            console.log('estoy ingresando en asunto')
+        break;
+        case 'localidad': 
+            console.log('estoy ingresando en localidad')
+        break;
+    }
+}
+
+inputs.forEach((input)=>{
+    input.addEventListener('keyup', validadFormulario);
+    input.addEventListener('blur', validadFormulario);
+   
+});
+
+formulario.addEventListener('submit', (e)=>{
+    e.preventDefault();
+});
+
 
 doc.addEventListener('DOMContentLoader', (e) =>
 
     contactFormValidations()
 
 )
-
-
-
 contactFormValidations()
 
-function contactFormValidations(){
 
+function contactFormValidations(){
+    
     const $condicionTrabajo = doc.getElementById('condicionTrabajo');
     const $alerta = doc.querySelectorAll('.alerta')
     console.log("🚀 ~ file: js.js ~ line 17 ~ contactFormValidations ~ $alerta", $alerta)
@@ -21,9 +62,9 @@ function contactFormValidations(){
     $inputs = doc.querySelectorAll('.contact-form [required]');
     console.log($inputs)
 
-    let $tipoDeEquipo = $inputs[4];
-    let $selectProcedenciaMotor = $inputs[7]
-    let $eficienciaMotor =  $inputs[8]
+    let $tipoDeEquipo = $inputs[5];
+    let $selectProcedenciaMotor = $inputs[8]
+    let $eficienciaMotor =  $inputs[9]
 
     equipo = []
     procedenciaMotor = []
@@ -84,7 +125,7 @@ function contactFormValidations(){
         input.insertAdjacentElement("afterend", $span);
     });
 
-  /*   doc.addEventListener('keyup', e=> {
+/*     doc.addEventListener('keyup', e=> {
         
         if (e.target.matches('.contact-form [required]')) {
             let $input = e.target
